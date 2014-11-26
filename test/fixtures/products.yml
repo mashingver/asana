@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  length: 1.5
+  width: 1.5
+  thickness: 1.5
+  diameter: 1.5
+  capacity: 1.5
+  weight: 1.5
+  color: MyString
+  material: MyString
+  extender: MyString
+  manufacturer: MyString
+  description: MyText
+  image_url: MyString
+  price: 9.99
+
+two:
+  title: MyString
+  length: 1.5
+  width: 1.5
+  thickness: 1.5
+  diameter: 1.5
+  capacity: 1.5
+  weight: 1.5
+  color: MyString
+  material: MyString
+  extender: MyString
+  manufacturer: MyString
+  description: MyText
+  image_url: MyString
+  price: 9.99
