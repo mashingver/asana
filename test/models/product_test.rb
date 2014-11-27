@@ -71,11 +71,11 @@ class ProductTest < ActiveSupport::TestCase
   end
   test 'image url' do
     # url изображения
-    ok = %w{ fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg
+    ok = %w{fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg
     http://a.b.c/x/y/z/fred.gif }
     bad = %w{ fred.doc fred.gif/more fred.gif.more }
     ok.each do |name|
-      assert new_product(name).valid?,"#{name} shouldn't be invalid"
+      assert new_product(name).valid?, "#{name} shouldn't be invalid"
       # не должно быть неприемлемым
     end
 
@@ -103,7 +103,7 @@ class ProductTest < ActiveSupport::TestCase
                           image_url: 'lotus_orange.jpg',
                           price: 34.99)
     assert product.invalid?
-    assert_equal [I18n.translate('activerecord.errors.messages.taken')], product.errors[:title]
+    assert_equal ['has already been taken'], product.errors[:title]
   end
 
 end

@@ -10,5 +10,10 @@ class Product < ActiveRecord::Base
       with: %r{\.(gif|jpg|jpeg|png)\Z}i,
       message: 'must be a URL for GIF, JPG, JPEG or PNG image.'
   }
+  #validates :title, length: {within: [10..255]}
+
+  def self.latest
+    Product.order(:updated_at).last
+  end
 
 end
