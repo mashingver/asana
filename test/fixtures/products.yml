@@ -31,3 +31,19 @@ two:
   description: MyText
   image_url: MyString
   price: 9.99
+
+lotus:
+  title: LotusMat
+  length: 183
+  width: 61
+  thickness: 0.6
+  diameter: nil
+  capacity: nil
+  weight: 1.5
+  color: orange
+  material: rubber
+  extender: nil
+  manufacturer: BodhiYoga
+  description: MyText
+  image_url: lotus_orange.jpg
+  price: 34.00
