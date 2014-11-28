@@ -1,5 +1,12 @@
 class Product < ActiveRecord::Base
 
+  has_many :line_items
+
+  before_destroy :ensure_not_referenced_by_any_line_item  #Подключаемым называется такой метод, который Rails вызывает автоматически
+                                                          #в определенный момент жизни объекта. В данном случае метод будет вызван перед
+                                                          #тем, как Rails попытается удалить строку в базе данных. Если подключаемый метод
+                                                          #возвращает false, строка не будет удалена.
+
   validates :title, :length, :width, :thickness, :diameter, :capacity,
             :weight, :color, :material, :extender, :manufacturer,
             :description, :image_url, :price, presence: true
@@ -14,6 +21,19 @@ class Product < ActiveRecord::Base
 
   def self.latest
     Product.order(:updated_at).last
+  end
+
+  private
+
+  # убеждаемся в отсутствии товарных позиций, ссылающихся на данный товар
+
+  def ensure_not_referenced_by_any_line_item
+    if line_items.empty?
+      return true
+    else
+      errors.add(:base, 'существуют товарные позиции')
+      return false
+    end
   end
 
 end
