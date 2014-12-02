@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :orders
+
   resources :line_items
 
   resources :carts
@@ -6,6 +8,8 @@ Rails.application.routes.draw do
   get 'store/index'
 
   resources :products
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -61,4 +65,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  match ':controller(/:action(/:id(.:format)))', :via => :get
+
 end
