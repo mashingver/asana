@@ -38,19 +38,20 @@ class ProductTest < ActiveSupport::TestCase
                           extender: 'nil',
                           manufacturer: 'BodhiYoga',
                           description: 'MyText',
-                          image_url: 'lotus_orange.jpg',
-                          price: 34.99)
+                          image_url: 'lotus_orange.jpg')
     product.price = -1
     assert product.invalid?
     assert_equal ['must be greater than or equal to 0.01'],
+
     product.errors[:price]
-    # должна быть больше или равна 0.01
+      # должна быть больше или равна 0.01
     product.price = 0
+
     assert product.invalid?
     assert_equal ['must be greater than or equal to 0.01'],
-    product.errors[:price]
+      product.errors[:price]
     product.price = 1
-    assert product.valid?, "#{:price} must be greater than or equal to 0.01"
+    assert product.valid? , " #{:price} must be greater than or equal to 0.01"
   end
 
   def new_product(image_url)
@@ -69,11 +70,13 @@ class ProductTest < ActiveSupport::TestCase
                 image_url: image_url,
                 price: 34.99)
   end
+
   test 'image url' do
     # url изображения
-    ok = %w{fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg
+    ok = %w{ fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg
     http://a.b.c/x/y/z/fred.gif }
     bad = %w{ fred.doc fred.gif/more fred.gif.more }
+
     ok.each do |name|
       assert new_product(name).valid?, "#{name} shouldn't be invalid"
       # не должно быть неприемлемым
