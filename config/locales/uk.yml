@@ -1,0 +1,55 @@
+uk:
+  layouts:
+    application:
+      title: "Asana"
+      home: "Домівка"
+      questions: "Запитання"
+      news: "Новини"
+      contact: "Контакти"
+  store:
+    index:
+      title_html: "Каталог"
+      add_html: "Додати в кошик"
+  carts:
+    cart:
+      title: "Ваш кошик"
+      empty: "Очистити кошик"
+      checkout: "Оформити замовлення"
+      sure: "Ви впевнені?"
+  number:
+    currency:
+      format:
+        unit: "₴"
+        precision: 2
+        separator: ","
+        delimiter: "."
+        format: "%u%n"
+  orders:
+    new:
+      legend: "Будь ласка введіть свої дані"
+    form:
+      name: "Ім’я"
+      address_html: "Адреса"
+      pay_type: "Спосіб оплати"
+      pay_prompt_html: "Оберіть спосіб оплати"
+      submit: "Замовити"
+  activerecord:
+    errors:
+      messages:
+        inclusion: "не включено до переліку"
+        blank: "не може бути пустим"
+    models:
+      order: "Замовлення"
+    attributes:
+      order:
+         address: "Адреса"
+         name: "Ім’я"
+         email: "E-mail"
+         pay_type: "Спосіб оплати"
+  errors:
+    template:
+      body: "Помилки виявлено в таких полях:"
+      header:
+        one: "%{model} не збережено через %{count} помилку"
+        other: "%{model} не збережено через %{count} помилки"
+  thanks: "Дякуємо за замовлення."
